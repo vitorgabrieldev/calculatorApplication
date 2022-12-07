@@ -90,11 +90,18 @@ body {
     background: red;
 }
 
+
 .iconHidden {
     display: none;
     position: absolute;
     color: #fefefe;
     font-size: 2.3rem;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.iconHidden:hover {
+    transform: scale(.9);
 }
 
 @media only screen and (max-width: 600px) {

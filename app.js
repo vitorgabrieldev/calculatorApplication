@@ -23,6 +23,9 @@ window.addEventListener('keypress', (e) => {
         case '/':
             functionCalc.div();
             break;
+        case 'Backspace':
+            console.log(e.key)
+            break;
         case 'Enter':
             functionCalc.res();
             break;
@@ -46,17 +49,13 @@ const functionCalc = {
         };
     },
     sum: function() {
-        
-        console.log(NDP);
-        console.log(NDS);
-        console.log(tokenOperator);
-
         if(NDP.length && !NDS.length) {
             displaySecondary.innerHTML = NDP;
             displayPrimary.innerHTML = "";
             NDS = NDP;
             NDP = '';
             tokenOperator = 'sum';
+            this.changeIconOperation('sum');
         };
     },
     sub: function() {
@@ -66,6 +65,7 @@ const functionCalc = {
             NDS = NDP;
             NDP = '';
             tokenOperator = 'sub';
+            this.changeIconOperation('sub');
         };
     },
     multi: function() {
@@ -75,6 +75,7 @@ const functionCalc = {
             NDS = NDP;
             NDP = '';
             tokenOperator = 'multi';
+            this.changeIconOperation('multi');
         };
     }, 
     div: function() {
@@ -84,6 +85,7 @@ const functionCalc = {
             NDS = NDP;
             NDP = '';
             tokenOperator = 'div';
+            this.changeIconOperation('div');
         };
     },
     res: function() {
@@ -124,6 +126,10 @@ const functionCalc = {
             };
         };
     },
+    deleteNumber: function() {
+        NDP = NDP.substring(0, NDP.length - 1);
+        displayPrimary.innerHTML = NDP;
+    },
     clean: function() {
         // --- * --- ResetCalc Info --- * ---
         NDP = "";
@@ -131,5 +137,44 @@ const functionCalc = {
         tokenOperator = "";
         displayPrimary.innerHTML = "";
         displaySecondary.innerHTML = "0";
+    },
+    changeIconOperation: function(data) {
+        let iconSub = document.querySelector('#iconSub');
+        let iconAdd = document.querySelector('#iconAdd');
+        let iconMulti = document.querySelector('#iconMulti');
+        let iconDiv = document.querySelector('#iconDiv');
+
+        switch(data) {
+            case 'sum':
+                    console.log(data);
+                    iconAdd.style.display = "none";
+                    iconDiv.style.display = "none";
+                    iconMulti.style.display = "none";
+                    iconSub.style.display = "none";
+                    iconAdd.style.display = "block";
+                    break;
+            case 'sub':
+                    iconAdd.style.display = "none";
+                    iconDiv.style.display = "none";
+                    iconMulti.style.display = "none";
+                    iconSub.style.display = "none";
+                    iconSub.style.display = "block";
+                    break;
+            case 'multi':
+                    iconAdd.style.display = "none";
+                    iconDiv.style.display = "none";
+                    iconMulti.style.display = "none";
+                    iconSub.style.display = "none";
+                    iconMulti.style.display = "block";
+                    break;
+            case 'div':
+                    iconAdd.style.display = "none";
+                    iconDiv.style.display = "none";
+                    iconMulti.style.display = "none";
+                    iconSub.style.display = "none";
+                    iconDiv.style.display = "block";
+                    break;
+        };
+
     },
 };

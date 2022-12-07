@@ -7,12 +7,19 @@
     <title>calculator Application</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
     <script src="./app.js" defer></script>
 </head>
 <body>
     <div class="container">
         <section id="display_area">
+            <div class="operationSimbols">
+                <i id="iconSub" class="bi bi-dash iconHidden"></i> <!-- " - " (Subtração) -->
+                <i id="iconAdd" class="bi bi-plus-lg iconHidden"></i> <!-- " + " (Adição) -->
+                <i id="iconMulti" class="bi bi-x-lg iconHidden"></i> <!-- " X " (Multiplicação) -->
+                <h1 id="iconDiv" class="iconHidden">/</h1> <!-- " / " (Divisão) -->
+            </div>
             <div class="currentInput"></div>
             <div class="answerScreen">0</div>
         </section>
@@ -20,7 +27,7 @@
             <button onclick="functionCalc.clean()" type="button" class="fun_btn" id="clear" value="0">
                 C
             </button>
-            <button type="button" class="fun_btn" id="erase" value="">
+            <button onclick="functionCalc.deleteNumber()" type="button" class="fun_btn" id="erase" value="">
                 &#11013
             </button>
             <button onclick="functionCalc.div()" type="button" class="fun_btn" value="/">/</button>

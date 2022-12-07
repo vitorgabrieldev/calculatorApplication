@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator Application</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./app.css">
+
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <section id="display_area">
+            <div class="currentInput"></div>
+            <div class="answerScreen">0</div>
+        </section>
+        <section class="keypadScreen">
+            <button onclick="functionCalc.clean()" type="button" class="fun_btn" id="clear" value="0">
+                C
+            </button>
+            <button type="button" class="fun_btn" id="erase" value="">
+                &#11013
+            </button>
+            <button onclick="functionCalc.div()" type="button" class="fun_btn" value="/">/</button>
+            <button type="button" class="fun_btn disableBtn" value="%">%</button>
+            <button onclick="renderCalc(7)" type="button" class="num_btn" value="7">7</button>
+            <button onclick="renderCalc(8)" type="button" class="num_btn" value="8">8</button>
+            <button onclick="renderCalc(9)" type="button" class="num_btn" value="9">9</button>
+            <button onclick="functionCalc.multi()" type="button" class="fun_btn" value="x">x</button>
+            <button onclick="renderCalc(4)" type="button" class="num_btn" value="4">4</button>
+            <button onclick="renderCalc(5)" type="button" class="num_btn" value="5">5</button>
+            <button onclick="renderCalc(6)" type="button" class="num_btn" value="6">6</button>
+            <button onclick="functionCalc.sub()" type="button" class="fun_btn" value="-">-</button>
+            <button onclick="renderCalc(1)" type="button" class="num_btn" value="1">1</button>
+            <button onclick="renderCalc(2)" type="button" class="num_btn" value="2">2</button>
+            <button onclick="renderCalc(3)" type="button" class="num_btn" value="3">3</button>
+            <button onclick="functionCalc.sum()" type="button" class="fun_btn" value="+">+</button>
+            <button onclick="renderCalc(00)" type="button" class="num_btn disableBtn" value="00">00</button>
+            <button onclick="renderCalc(0)" type="button" class="num_btn" value="0">0</button>
+            <button type="button" class="num_btn disableBtn" value=".">.</button>
+            <button onclick="functionCalc.res()" type="button" class="fun_btn" id="evauate" value="">=</button>
+        </section>
+    </div>
+</body>
+</html>

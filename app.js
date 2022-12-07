@@ -137,6 +137,10 @@ const functionCalc = {
         tokenOperator = "";
         displayPrimary.innerHTML = "";
         displaySecondary.innerHTML = "0";
+
+        this.changeIconOperation('clean');
+
+        
     },
     changeIconOperation: function(data) {
         let iconSub = document.querySelector('#iconSub');
@@ -174,6 +178,13 @@ const functionCalc = {
                     iconSub.style.display = "none";
                     iconDiv.style.display = "block";
                     break;
+            case 'clean':
+                    iconAdd.style.display = "none";
+                    iconDiv.style.display = "none";
+                    iconMulti.style.display = "none";
+                    iconSub.style.display = "none";
+                    iconSub.style.display = "none";
+                break;
         };
 
     },
